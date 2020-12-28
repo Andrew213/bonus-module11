@@ -1,0 +1,333 @@
+@font-face {
+  font-family: "OpenSans";
+  font-display: swap;
+  src: url("../fonts/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-display: swap;
+  src: url("../fonts/Roboto-Regular.woff") format("woff"), url("../fonts/Roboto-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+body,
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  height: 100%;
+  font-family: "OpenSans", sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  color: #333333;
+  font-size: 14px;
+  min-width: 320px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+ul,
+a {
+  list-style-type: none;
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: inline;
+}
+
+img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.simplebar-content-wrapper {
+  overflow: auto;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
+
+.main {
+  background-color: #424242;
+  padding: 70px 90px 110px 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.checkbox {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #fff;
+}
+
+.checkbox__title {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.checkbox__item + .checkbox__item {
+  margin-top: 20px;
+}
+
+.checkbox__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 25px;
+}
+
+.checkbox__label {
+  cursor: pointer;
+}
+
+.checkbox__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.checkbox__input:checked + .checkbox__box {
+  border: 1px solid #CCB26E;
+  background: url(../img/check.svg) no-repeat center;
+}
+
+.checkbox__box {
+  position: absolute;
+  margin-left: -25px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #999999;
+  border-radius: 3px;
+}
+
+.checkbox__box:focus {
+  outline: 3px solid #fff;
+}
+
+.choices {
+  width: 176px;
+}
+
+.choices__inner {
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px !important;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.is-open .choices__inner {
+  border-radius: 10px !important;
+  border: 1px solid #CCB26E;
+}
+
+.choices__placeholder {
+  opacity: 1;
+}
+
+.choices__list--dropdown {
+  top: 0;
+  z-index: 1;
+  padding-top: 65px;
+  word-break: unset;
+  border-radius: 10px;
+}
+
+.choices__list.choices__list--dropdown.is-active {
+  border: 1px solid #CCB26E;
+}
+
+.choices__list--dropdown .choices__item--selectable.is-highlighted:after {
+  display: none;
+}
+
+.choices[data-type*=select-one]:after {
+  content: '';
+  height: 8px;
+  width: 13px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-style: unset !important;
+  border-color: unset !important;
+  border-width: 0;
+  position: absolute;
+  right: 11.5px;
+  top: 5%;
+  margin-top: -2.5px;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.3137 6.65674L6.65687 0.999884L1.00001 6.65674' stroke='%23000'/%3E%3C/svg%3E%0A");
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
+  z-index: 3;
+}
+
+.choices[data-type*=select-one].is-open:after {
+  margin-top: -2.5px;
+  background-image: url("data:image/svg+xml,%3Csvg width='13' height='8' viewBox='0 0 13 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.3137 6.65674L6.65687 0.999884L1.00001 6.65674' stroke='%23CCB26E'/%3E%3C/svg%3E%0A");
+  z-index: 3;
+  -webkit-transform: unset;
+      -ms-transform: unset;
+          transform: unset;
+}
+
+.choices .choices__item.choices__item--choice.choices__placeholder.choices__item--selectable {
+  display: none;
+}
+
+.map {
+  width: 460px;
+  height: 460px;
+}
+
+.map [class*='ground-pane'] {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+
+.scroll {
+  padding: 30px 30px 0 30px;
+  width: 400px;
+  height: 310px;
+  overflow: auto;
+  background-color: #fff;
+}
+
+.scroll__text {
+  line-height: 24px;
+}
+
+.scroll .simplebar-scrollbar::before {
+  background-color: #CCB26E;
+}
+
+.feedback {
+  padding: 38px 30px 0 30px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.feedback__inner {
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  opacity: unset;
+}
+
+.feedback__input {
+  margin-bottom: 31px;
+  width: 386px;
+  padding: 24px 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #FF5C00;
+  border-radius: 10px;
+}
+
+.feedback__input::-webkit-input-placeholder {
+  color: #999999;
+}
+
+.feedback__input::-moz-placeholder {
+  color: #999999;
+}
+
+.feedback__input:-ms-input-placeholder {
+  color: #999999;
+}
+
+.feedback__input::-ms-input-placeholder {
+  color: #999999;
+}
+
+.feedback__input::placeholder {
+  color: #999999;
+}
+
+.feedback__btn {
+  background: #FF5C00;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-family: 'Roboto';
+  font-size: 20px;
+  padding: 19px 53px;
+  max-width: 192px;
+  cursor: pointer;
+}
+
+.feedback__label {
+  position: relative;
+}
+
+.feedback .js-validate-error-label {
+  position: absolute;
+  top: -17px;
+  left: 20px;
+  font-family: 'Roboto';
+  font-size: 12px;
+}
